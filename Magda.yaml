@@ -1,0 +1,50 @@
+n_heads: 1
+dropout: 0.2
+num_blocks: 1
+lambda_uncertainty: 1e-5
+emb_dropout: 0.2
+schedule_sampler_name: 'lossaware'
+diffusion_steps: 5
+noise_schedule: 'cosine'
+rescale_timesteps: True
+d_state: 50
+d_conv: 4
+expand: 2
+gridsize: 1
+loss_weight: 0.6
+temperature_parameter: 0.07
+preference_weight: 0.9
+use_gpu: True
+gpu_id: 0
+#worker: 8
+seed: 2023
+loss_type: 'CE'
+save_dataset: False
+save_dataloaders: False
+hidden_size: 100
+USER_ID_FIELD: session_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+load_col:
+  inter: [session_id, item_id, timestamp]
+
+POSITION_FIELD: position_id
+ITEM_LIST_LENGTH_FIELD: item_length
+LIST_SUFFIX: _list
+MAX_ITEM_LIST_LENGTH: 20
+epochs: 1000
+train_batch_size: 100
+learner: adam
+learning_rate: 0.001
+eval_step: 1
+stopping_step: 5
+eval_args:
+  split: {'LS':'valid_and_test'}
+  group_by: user
+  order: TO   # RO、TO
+  mode: 'full'
+
+metrics: ['Recall', 'MRR', 'NDCG', 'GAUC']
+topk: [5, 10, 15, 20]
+valid_metric: MRR@20
+eval_batch_size: 100
