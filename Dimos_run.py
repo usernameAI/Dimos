@@ -1,11 +1,11 @@
 from logging import getLogger
 from recbole.utils import init_logger, init_seed
 from recbole.trainer import Trainer
-from Magda import Magda
+from Dimos import Dimos
 from recbole_gnn.config import Config
 from recbole_gnn.utils import create_dataset, data_preparation, get_model, get_trainer
 
-config = Config(model=Magda, dataset='diginetica', config_file_list=['Magda.yaml'])
+config = Config(model=Dimos, dataset='diginetica', config_file_list=['Dimos.yaml'])
 init_seed(config['seed'], config['reproducibility'])
 init_logger(config)
 logger = getLogger()
