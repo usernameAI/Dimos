@@ -1,8 +1,8 @@
-# Magda
+# Dimos
 
 This is an implemention for our paper based on Pytorch
 
-Magda: Bridging generative and discriminative preference modeling with Mamba for session-based recommendation
+Dimos: Diffusion model with unified sequential state space for session-based recommendation
 
 This paper is currently under peer review.
 
@@ -19,6 +19,6 @@ The Retailrocket dataset can be found at: https://www.kaggle.com/retailrocket/ec
 
 Install RecBole: `pip install recbole`
 
-2. Run Magda
+2. Run Dimos
 
-`python Magda_run.py`
+`python Dimos_run.py`
