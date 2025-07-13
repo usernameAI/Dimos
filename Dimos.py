@@ -679,9 +679,9 @@ class DiffFormer(nn.Module):
         return x_0, item_rep_out, weights, t
 
 
-class Magda(SequentialRecommender):
+class Dimos(SequentialRecommender):
     def __init__(self, config, dataset):
-        super(Magda, self).__init__(config, dataset)
+        super(Dimos, self).__init__(config, dataset)
         self.emb_dim = config['hidden_size']
         self.item_embeddings = nn.Embedding(self.n_items, self.emb_dim, padding_idx=0)
         self.embed_dropout = nn.Dropout(config['emb_dropout'])
