@@ -805,3 +805,4 @@ class Dimos(SequentialRecommender):
         scores = torch.matmul((self.preference_weight * rep_diffu + (1 - self.preference_weight) * time_session),
                               self.item_embeddings.weight.transpose(0, 1))
         return scores
+
